@@ -1,3 +1,4 @@
+-- Procedure for filling customers table with random data
 DELIMITER $$
 CREATE PROCEDURE FILLUSERS()
 BEGIN
@@ -39,6 +40,7 @@ WHILE I <= 100 DO
 END$$
 DELIMITER ; 
 
+-- Procedure for filling transactions table with random data
 DELIMITER //
 CREATE PROCEDURE FILLTRANSACTIONS()
 BEGIN
@@ -60,6 +62,7 @@ END WHILE;
 END//
 DELIMITER ;
 
+--Procedure for saving customers table with data as csv file
 DELIMITER $$
 CREATE PROCEDURE SAVECUSTOMERS()
 BEGIN
@@ -73,6 +76,7 @@ LINES TERMINATED BY '\n';
 END$$
 DELIMITER ;
 
+--Procedure for saving transactions table with data as csv file
 DELIMITER $$
 CREATE PROCEDURE SAVETRANSACTIONS()
 BEGIN
@@ -86,6 +90,7 @@ LINES TERMINATED BY '\n';
 END$$
 DELIMITER ;
 
+--Calling procedures
 CALL FILLUSERS();
 CALL FILLTRANSACTIONS();
 CALL SAVECUSTOMERS();
