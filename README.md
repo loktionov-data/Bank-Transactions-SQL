@@ -47,7 +47,7 @@ Subsequent parts will include **data analysis** and **complex SQL queries** for 
 
 ---
 
-## 🖼Example Table Structure
+## Example Table Structure
 
 | Column           | Type                | Description                      |
 |------------------|---------------------|----------------------------------|
