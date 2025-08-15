@@ -63,6 +63,8 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SAVECUSTOMERS()
 BEGIN
+SELECT 'ID', 'name', 'gender', 'country', 'age', 'balance'
+UNION ALL
 SELECT * FROM customers
 INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/customers.csv'
 FIELDS TERMINATED BY ','
@@ -74,6 +76,8 @@ DELIMITER ;
 DELIMITER $$
 CREATE PROCEDURE SAVETRANSACTIONS()
 BEGIN
+SELECT 'ID', 'customer_id', 'date', 'amount', 'transaction_type'
+UNION ALL
 SELECT * FROM transactions
 INTO OUTFILE 'C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/transactions.csv'
 FIELDS TERMINATED BY ','
