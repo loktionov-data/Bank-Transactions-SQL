@@ -1,4 +1,4 @@
--- Procedure for filling customers table with random data
+## Procedure for filling customers table with random data
 DELIMITER $$
 CREATE PROCEDURE FILLUSERS()
 BEGIN
@@ -40,7 +40,7 @@ WHILE I <= 100 DO
 END$$
 DELIMITER ; 
 
--- Procedure for filling transactions table with random data
+## Procedure for filling transactions table with random data
 DELIMITER //
 CREATE PROCEDURE FILLTRANSACTIONS()
 BEGIN
@@ -62,7 +62,7 @@ END WHILE;
 END//
 DELIMITER ;
 
---Procedure for saving customers table with data as csv file
+##Procedure for saving customers table with data as csv file
 DELIMITER $$
 CREATE PROCEDURE SAVECUSTOMERS()
 BEGIN
@@ -76,7 +76,7 @@ LINES TERMINATED BY '\n';
 END$$
 DELIMITER ;
 
---Procedure for saving transactions table with data as csv file
+##Procedure for saving transactions table with data as csv file
 DELIMITER $$
 CREATE PROCEDURE SAVETRANSACTIONS()
 BEGIN
@@ -90,7 +90,16 @@ LINES TERMINATED BY '\n';
 END$$
 DELIMITER ;
 
---Calling procedures
+## Seting values to negative for outgoing transactions
+UPDATE `transactions` 
+SET amount = amount *(-1)
+WHERE transactions.transaction_type IN ("Withdrawal,", "Fee", "Payment"); 
+
+## Editing type of a column in transactions table
+ALTER TABLE `transactions`
+MODIFY COLUMN amount DECIMAL(10,2);
+
+##Calling procedures
 CALL FILLUSERS();
 CALL FILLTRANSACTIONS();
 CALL SAVECUSTOMERS();
