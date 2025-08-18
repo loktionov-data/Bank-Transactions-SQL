@@ -1,8 +1,8 @@
 # Bank-Transactions-SQL
 
 This repository contains the **first part** of an SQL project simulating bank transactions data.  
-The goal of this stage is to design the database schema and populate it with sample data generated entirely via SQL statements.  
-Subsequent parts will include **data analysis** and **complex SQL queries** for insights.
+The goal of this stage is to design the database schema, populate it with sample data generated entirely via SQL statements, and perform initial business analysis with stored procedures.  
+Subsequent parts will include **views**, **data analysis**, and **complex SQL queries** for deeper insights.
 
 ---
 
@@ -13,6 +13,12 @@ Subsequent parts will include **data analysis** and **complex SQL queries** for 
   (e.g., `deposit`, `withdrawal`, `transfer`, `payment`)
 - Data generation with `INSERT` statements and MySQL functions like `RAND()`  
 - Predefined lists of names and countries (prepared beforehand without importing external datasets)
+- **Stored procedures for analysis**, including:
+  - Top clients by monthly transaction sum
+  - Average balance by country
+  - Deposit and withdrawal totals per client
+  - Active vs. total users ratio
+  - Top countries by high-balance users
 
 ---
 
@@ -26,9 +32,7 @@ Subsequent parts will include **data analysis** and **complex SQL queries** for 
 
 ## Next Steps (Upcoming Parts)
 
-- Implement analytical SQL queries to answer business-related questions
-- Perform aggregations, grouping, and filtering for transaction insights
-- Create views and stored procedures for reporting
+- **Create views** for reusable reporting and analytics
 - Explore indexing strategies for performance optimization
 
 ---
@@ -42,8 +46,10 @@ Subsequent parts will include **data analysis** and **complex SQL queries** for 
 
 ## Project Status
 
-**Part 1 – Database schema and sample data generation**   
-**Part 2 – Data analysis and SQL queries** *(coming soon)*
+| Part | Description                                              | Status       |
+|------|----------------------------------------------------------|--------------|
+| 1    | Schema creation + sample data generation + analysis procs | ✅ Complete  |
+| 2    | Views, analytical queries, performance tuning             | 🚧 In progress |
 
 ---
 
@@ -57,3 +63,5 @@ Subsequent parts will include **data analysis** and **complex SQL queries** for 
 | transaction_type | ENUM                | Type of transaction             |
 | amount           | DECIMAL(10,2)       | Transaction amount              |
 | transaction_date | DATE                | Date of transaction             |
+
+---
